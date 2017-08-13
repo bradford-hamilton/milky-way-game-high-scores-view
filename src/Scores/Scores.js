@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import tz from 'moment-timezone';
 
 import './Scores.css';
 
@@ -21,34 +20,30 @@ class Scores extends Component {
       .then((results) => {
         if (results.data === this.state.highScores) {
           this.keepPolling();
-          return;
         } else {
           this.setState({ highScores: results.data });
           this.keepPolling();
-          return;
         }
       })
       .catch(err => console.log(err));
   }
 
   keepPolling() {
-    setTimeout(() => this.pollForNewScores() , 3000);
+    setTimeout(() => this.pollForNewScores(), 3000);
   }
 
   populateScores() {
-    return this.state.highScores.map((scoreObj) => {
-      return (
-        <li key={scoreObj.id} className="score-list-item">
-          <h3><span className="name">{`${scoreObj.name}`}</span> with a score of</h3>
-          <span className="score">{`${scoreObj.score}`}</span>
-          <span className="date">{this.formatCreatedAtTime(scoreObj.created_at)}</span>
-        </li>
-      );
-    });
+    return this.state.highScores.map(scoreObj => (
+      <li key={scoreObj.id} className="score-list-item">
+        <h3><span className="name">{`${scoreObj.name}`}</span> with a score of</h3>
+        <span className="score">{`${scoreObj.score}`}</span>
+        <span className="date">{this.formatCreatedAtTime(scoreObj.created_at)}</span>
+      </li>
+    ));
   }
 
   formatCreatedAtTime(created_at) {
-    return moment(created_at).tz(moment.tz.guess()).calendar()
+    return moment(created_at).tz(moment.tz.guess()).calendar();
   }
 
   render() {

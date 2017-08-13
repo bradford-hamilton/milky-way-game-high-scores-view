@@ -4,6 +4,13 @@
 This is a scoreboard for the game Milky-Way Battles which was built by @joscelynJames
 - Link to Joscelyn's game repo: [milky-way-battles](https://github.com/JoscelynJames/space-battle-arcade)
 
+First install all the dependencies: with `npm install`
+
+To run locally:
+```
+npm start
+```
+
 To build:
 ```
 npm run build
