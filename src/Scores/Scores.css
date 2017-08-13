@@ -29,6 +29,10 @@
   color: #ff8000;
 }
 
+.name {
+  color: #855a06;
+}
+
 ol > li > h3 {
   display: inline;
 }

@@ -39,7 +39,7 @@ class Scores extends Component {
     return this.state.highScores.map((scoreObj) => {
       return (
         <li key={scoreObj.id} className="score-list-item">
-          <h3>{`${scoreObj.name} with a score of `}</h3>
+          <h3><span className="name">{`${scoreObj.name}`}</span> with a score of</h3>
           <span className="score">{`${scoreObj.score}`}</span>
           <span className="date">{this.formatCreatedAtTime(scoreObj.created_at)}</span>
         </li>
