@@ -1,0 +1,38 @@
+.Scores {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.Scores > .unordered-list {
+  justify-content: flex-start;
+  flex-wrap: none;
+}
+
+.Scores > .unordered-list > span {
+  flex-wrap: none;
+}
+
+.score-list-item {
+  padding-left: 10px;
+  margin-top: 10px;
+  width: 100vw;
+}
+
+.score {
+  color: red;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.date {
+  color: #ff8000;
+}
+
+ol > li > h3 {
+  display: inline;
+}
+
+ol > li > h3 > span {
+  display: inline;
+}
