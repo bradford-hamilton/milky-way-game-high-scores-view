@@ -38,19 +38,14 @@ class Scores extends Component {
     if (!this.state.highScores.length > 0) return null;
 
     const highScoresClone = _.cloneDeep(this.state.highScores);
-    const sortedHighScores = this.sortHighScores(highScoresClone);
 
-    return sortedHighScores.map(scoreObj => (
+    return highScoresClone.map(scoreObj => (
       <li key={scoreObj.id} className="score-list-item">
         <h3><span className="name">{`${scoreObj.name}`}</span> with a score of</h3>
         <span className="score">{`${scoreObj.score}`}</span>
         <span className="date">{this.formatCreatedAtTime(scoreObj.created_at)}</span>
       </li>
     ));
-  }
-
-  sortHighScores(highScores) {
-    return _.sortBy(highScores, [function (obj) { return Number(obj.score); }]);
   }
 
   formatCreatedAtTime(created_at) {
