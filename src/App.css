@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
 .App {
   height: 100%;
   width: 100%;
@@ -7,9 +9,9 @@
   background-color: #7BD8BE;
   height: 24px;
   padding: 24px 24px 24px 40px;
-  color: #F0544F;
-  font-style: italic;
-  font-family: sans-serif;
+  color: #8d59ed;
+  font-family: 'Merriweather', serif;
+  text-shadow: 1px 1px #ffffff;
   font-size: 24px;
 }
 
