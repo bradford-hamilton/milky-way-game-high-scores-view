@@ -37,9 +37,9 @@ class Scores extends Component {
   populateScores() {
     if (!this.state.highScores.length > 0) return null;
 
-    const highScoresClone = _.cloneDeep(this.state.highScores);
+    const highScoresStateClone = _.cloneDeep(this.state.highScores);
 
-    return highScoresClone.map(scoreObj => (
+    return highScoresStateClone.map(scoreObj => (
       <li key={scoreObj.id} className="score-list-item">
         <h3><span className="name">{`${scoreObj.name}`}</span> with a score of</h3>
         <span className="score">{`${scoreObj.score}`}</span>
@@ -49,7 +49,9 @@ class Scores extends Component {
   }
 
   formatCreatedAtTime(created_at) {
-    return moment(created_at).tz(moment.tz.guess()).calendar();
+    return moment(created_at)
+      .tz(moment.tz.guess())
+      .calendar();
   }
 
   render() {
